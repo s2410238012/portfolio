@@ -1,0 +1,304 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COLORS */
+:root {
+    --accent-green: #a0c073;
+    --accent-green-light: #c8dfa3;
+
+    --accent-orange: #db814c;
+    --accent-orange-light: #f3a77a;
+
+    --accent-pink: #e07aa8;
+    --accent-pink-light: #f3bcd0;
+
+    --beige: #F5EDE3;
+    --beige-light: #fff6e8;
+
+    --text-dark: #000;
+    --bg-light: #F5EDE3;
+}
+
+/* GLOBAL */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* TOPBAR – Farbe abhängig von Seite */
+body.index-page .topbar {
+    background: var(--accent-pink);
+}
+
+body.detail-page .topbar {
+    background: var(--accent-green);
+}
+
+body.cv-page .topbar {
+    background: var(--accent-orange);
+}
+
+body.contact-page .topbar {
+    background: var(--accent-orange);
+}
+
+/* TOPBAR STRUCTURE */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+}
+
+/* LOGO – immer beige */
+.logo-small img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* NAVIGATION */
+.topbar nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.topbar nav a {
+    text-decoration: none;
+    color: var(--beige);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+/* NAVIGATION HOVER – hellere Varianten */
+.topbar nav a:nth-child(1):hover { color: var(--accent-green-light); }
+.topbar nav a:nth-child(2):hover { color: var(--accent-orange-light); }
+.topbar nav a:nth-child(3):hover { color: var(--accent-pink-light); }
+
+/* HEADER – Vollbild Pink */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* echte Mitte */
+    align-items: center;
+    text-align: center;
+
+    padding-top: calc(2rem + 40px); /* kompensiert Topbar-Höhe */
+    padding-bottom: 2rem;
+
+    background:
+        var(--accent-pink);
+
+    padding: 0; /* wichtig */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; /* kompakter */
+}
+
+
+/* HEADER LOGO */
+.hero-logo {
+    width: clamp(120px, 20vw, 200px);
+    height: auto;
+}
+
+/* HEADER H1 – Climate Crisis, beige */
+.hero h1 {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 400;
+    color: var(--beige);
+    text-transform: lowercase;
+    white-space: nowrap;
+}
+
+/* HEADER SUBTITLE */
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    color: var(--beige);
+}
+
+/* TYPOGRAPHY – Climate Crisis für H1/H2 */
+h1 {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-weight: 400;
+    color: var(--accent-orange);
+    text-transform: lowercase;
+}
+
+h2 {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    margin-top: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+/* H2 – abhängig von Seiten-Typ */
+body.index-page h2,
+body.detail-page h2 {
+    color: var(--accent-green);
+}
+
+body.cv-page h2 {
+    color: var(--accent-pink);
+}
+
+body.contact-page h2 {
+    color: var(--accent-orange);
+}
+
+/* H3 */
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* PARAGRAPHS */
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    max-width: 800px;
+}
+
+/* LINKS */
+a {
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--accent-orange);
+}
+
+/* WORK GRID */
+.work-section {
+    padding: 60px 60px;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 260px);
+    gap: 30px;
+    justify-content: start;
+}
+
+.work-item {
+    width: 260px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-4px);
+}
+
+.thumb {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-item p {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* DETAILSEITEN */
+.project-hero {
+    height: 45vh;
+    overflow: hidden;
+}
+
+.project-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.project-video {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.figma-link,
+.download-link {
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+.figma-link:hover,
+.download-link:hover {
+    color: var(--accent-orange);
+}
+
+/* CONTACT */
+.contact-section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-section.contact-page h2 {
+    color: var(--accent-pink) !important;
+}
+
