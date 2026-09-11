@@ -86,6 +86,7 @@ body.contact-page .topbar {
 .topbar nav a:nth-child(3):hover { color: var(--accent-pink-light); }
 
 /* HEADER – Vollbild Pink */
+/* HEADER – Vollbild Pink */
 .hero {
     height: 100vh;
     display: flex;
@@ -94,33 +95,31 @@ body.contact-page .topbar {
     align-items: center;
     text-align: center;
 
-    padding-top: calc(2rem + 40px); /* kompensiert Topbar-Höhe */
-    padding-bottom: 2rem;
+    /* Topbar-Höhe kompensieren */
+    padding-top: 60px; /* 40px Logo + 20px Padding der Topbar */
+    padding-bottom: 20px;
 
-    background:
-        var(--accent-pink);
-
-    padding: 0; /* wichtig */
+    background: var(--accent-pink);
 }
 
+/* HEADER CONTENT */
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px; /* kompakter */
+    gap: 10px; /* kompakter */
 }
 
-
-/* HEADER LOGO */
+/* HEADER LOGO – größer + responsive */
 .hero-logo {
-    width: clamp(120px, 20vw, 200px);
+    width: clamp(160px, 22vw, 260px);
     height: auto;
 }
 
 /* HEADER H1 – Climate Crisis, beige */
 .hero h1 {
     font-family: 'Climate Crisis', sans-serif;
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: clamp(2.4rem, 7vw, 4.6rem);
     font-weight: 400;
     color: var(--beige);
     text-transform: lowercase;
@@ -131,7 +130,7 @@ body.contact-page .topbar {
 .hero p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    font-size: clamp(1rem, 2.8vw, 1.4rem);
     color: var(--beige);
 }
 
@@ -291,13 +290,14 @@ a:hover {
     color: var(--accent-orange);
 }
 
-/* CONTACT */
+/* CONTACT – konsistentes Padding */
 .contact-section {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 120px) 20px;
     max-width: 900px;
     margin: 0 auto;
 }
 
+/* CONTACT Überschrift */
 .contact-section.contact-page h2 {
     color: var(--accent-pink) !important;
 }
